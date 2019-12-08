@@ -41,7 +41,7 @@ function Presentation() {
                         <img class="rect" src={corner} />
                         <div class="row">
                             <h2 className="testee font-weight-bold">En savoir plus.</h2>
-                            <a href="something" class="button3">Commencer</a>
+                            <Link to="/Login"><a href="something" class="button3">Commencer</a></Link>
                         </div>
                     </div>
                 </div>
