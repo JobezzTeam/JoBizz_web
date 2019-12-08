@@ -15,7 +15,6 @@ import {
 } from "react-router-dom";
 import { MDBBtn } from "mdbreact";
 import './StyleLanding.css'
-import './Style.css'
 import Recruteur from './Recruteur/Recruteur';
 import './home.css'
 import Navi from './Navbar'
@@ -36,7 +35,9 @@ function Presentation() {
                     <div class="col envi">
                         <h1 font-weight-bold>Découvrez.</h1>
                         <h1 className="font-weight-bold">Une nouvelle méthode.</h1>
-                        <h1 className="font-weight-bold">Recherche d'emplois.</h1>
+                        <h1 className="font-weight-bold">Job saisonniers.</h1>
+                        <h1 className="font-weight-bold">Des Extras.</h1>
+                        <h1 className="font-weight-bold">Proche de chez vous.</h1>
                         <img class="rect" src={corner} />
                         <div class="row" style={{marginTop: '30%'}}>
                             <h2 className="testee font-weight-bold">En savoir plus.</h2>

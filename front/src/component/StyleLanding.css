@@ -7,11 +7,6 @@
     font-size: 20px;
 }
 
-.login {
-    background-image: url("../image/welcome-bg.png");
-    background-size: cover;
-}
-
 .login form {
     margin-bottom: 400px;
 }

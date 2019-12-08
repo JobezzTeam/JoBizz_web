@@ -4,7 +4,6 @@ import { usePosition } from 'use-position';
 import GoogleMapReact from 'google-map-react';
 import { MDBCard, MDBCardTitle, MDBCardText, MDBContainer } from "mdbreact";
 import "./UserPage.css"
-import "../Style.css"
 import jwtDecode from 'jwt-decode'
 import {MDBBtn} from "mdbreact"
 

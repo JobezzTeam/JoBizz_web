@@ -1,6 +1,5 @@
 import React, { Component, useState, useRef, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Style.css'
 import {Redirect} from 'react-router-dom'
 import axios from 'axios';
 import UserPage from './UserPage/UserPage'
