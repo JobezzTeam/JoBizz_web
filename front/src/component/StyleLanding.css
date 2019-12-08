@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500'); /*  ici Navbar text */
+.navbar-brand {
+    font-size: 40px;
+}
+
+.nav-link {
+    font-size: 20px;
+}
+
+.login {
+    background-image: url("../image/welcome-bg.png");
+    background-size: cover;
+}
+
+.login form {
+    margin-bottom: 400px;
+}
+
+.ContainLogin {
+    margin-top: 10%;
+}

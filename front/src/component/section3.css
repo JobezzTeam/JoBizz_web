@@ -1,0 +1,37 @@
+.Jobizz {
+    color: #2AA0E0;
+    font-family: 'Gotham Rounded', sans-serif;
+    font-size: 3.2em;
+}
+
+.h3 {
+    font-size: 1.7em;
+    font-family: 'Gotham Rounded', sans-serif;
+}
+
+.pou {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 15%;
+}
+
+.sizing {
+    font-size: 1.7em;
+    font-family: 'Gotham Rounded', sans-serif;
+    margin-bottom: 2%;
+}
+
+a.button3_sec {
+    padding: 0.3em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 2em;
+    font-family: 'Roboto',sans-serif;
+    font-size: 1.3em;
+    font-weight: 900;
+    color: #FFFFFF;
+    background-color: #4eb5f1;
+    text-align: center;
+    transition: all 0.2s;
+    width: 25%;
+    margin-bottom: 5%;
+} 
