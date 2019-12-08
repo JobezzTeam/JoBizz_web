@@ -25,7 +25,6 @@ import Footer from './Footer';
 import back from "../media/Image_Paris_Pins.png"
 import corner from "../media/Rect-blue.png"
 
-
 function Presentation() {
     return (
         <div>
@@ -39,7 +38,7 @@ function Presentation() {
                         <h1 className="font-weight-bold">Une nouvelle méthode.</h1>
                         <h1 className="font-weight-bold">Recherche d'emplois.</h1>
                         <img class="rect" src={corner} />
-                        <div class="row">
+                        <div class="row" style={{marginTop: '30%'}}>
                             <h2 className="testee font-weight-bold">En savoir plus.</h2>
                             <Link to="/Login"><a href="something" class="button3">Commencer</a></Link>
                         </div>
