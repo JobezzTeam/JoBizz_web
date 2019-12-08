@@ -27,6 +27,7 @@ import corner from "../media/Rect-blue.png"
 function Presentation() {
     return (
         <div>
+            <Navi/>
             <section className="jumbotron">
                 <div class="row posi">
                     <div class="col">
@@ -57,7 +58,6 @@ class LandingPage extends Component {
     render() {
         return (
             <div className="landingPage">
-                <Navi/>
                 <Router>
                     <Route exact path="/" component={Presentation}/>
                     <Route path="/Login" component={Login}/>
