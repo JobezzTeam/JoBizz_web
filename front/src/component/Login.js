@@ -93,6 +93,9 @@ class Login extends Component {
                                 <div>
                                     <Link to='/Register'><MDBBtn style={{background: "white"}} type="button">S'enregister</MDBBtn></Link>
                                 </div>
+                                <div>
+                                    <Link to='/Recruteur'><MDBBtn style={{background: "white"}} type="button">Vous êtres recruteur</MDBBtn></Link>
+                                </div>
                             </form>
                         </MDBCol>
                     </MDBRow>
