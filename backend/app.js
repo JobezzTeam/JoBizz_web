@@ -21,8 +21,11 @@ connection.once('open', () => {
 
 const usersRouter = require('./routes/users');//route pour le user/ le fichier qui nous permettra de stocker les element
 const anoRouter = require('./routes/annonces');
+const recruRouter = require('./routes/recruteur');
+
 app.use('/users', usersRouter); //use du fichier
 app.use('/annonce', anoRouter);
+app.use('/recruteur', recruRouter);
 
 app.listen(port, () => { //deploiement en server local
     console.log('server se co à :',port);

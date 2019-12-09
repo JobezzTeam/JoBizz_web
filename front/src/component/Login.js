@@ -86,15 +86,15 @@ class Login extends Component {
                                     onChange={this.onChangePassword}
                                 />
                                 <div className="text-center mt-4">
-                                    <MDBBtn style={{background: "white"}} type="submit">Login</MDBBtn>
+                                    <MDBBtn color="info" type="submit">Login</MDBBtn>
                                     <div>{this.state.data}</div>
                                 </div>
                                 <br/>
                                 <div>
-                                    <Link to='/Register'><MDBBtn style={{background: "white"}} type="button">S'enregister</MDBBtn></Link>
+                                    <Link to='/Register'><MDBBtn color="info" type="button">S'enregister</MDBBtn></Link>
                                 </div>
                                 <div>
-                                    <Link to='/Recruteur'><MDBBtn style={{background: "white"}} type="button">Vous êtres recruteur</MDBBtn></Link>
+                                    <Link to='/Recruteur'><MDBBtn color="info" type="button">Vous êtres recruteur ?</MDBBtn></Link>
                                 </div>
                             </form>
                         </MDBCol>

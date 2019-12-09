@@ -7,7 +7,7 @@ const Style = {
   marginTop: '10%'
 };
 
-class Recruteur extends React.Component {
+class sendAnnonce extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -195,4 +195,4 @@ class Recruteur extends React.Component {
     }
 }
 
-export default Recruteur;
+export default sendAnnonce;

@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import MobileStoreButton from 'react-mobile-store-button';
 import Login from './Login'
 import Register from './Register'
+import RecruteurRegister from './Recruteur/RecruteurRegister'
 import UserPage from './UserPage/UserPage'
 import {
     BrowserRouter as Router,
@@ -15,7 +16,7 @@ import {
 } from "react-router-dom";
 import { MDBBtn } from "mdbreact";
 import './StyleLanding.css'
-import Recruteur from './Recruteur/Recruteur';
+import Recruteur from './Recruteur/SendAnnonce';
 import './home.css'
 import Navi from './Navbar'
 import Section2 from './Section2';
@@ -63,7 +64,7 @@ class LandingPage extends Component {
                     <Route path="/Login" component={Login}/>
                     <Route path="/Register" component={Register}/>
                     <Route path="/UserPage" component={UserPage}/>
-                    <Route path="/Recruteur" component={Recruteur}/>
+                    <Route path="/Recruteur" component={RecruteurRegister}/>
                 </Router>
             </div>
         );

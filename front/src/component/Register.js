@@ -73,6 +73,10 @@ class Register extends React.Component {
         }
         return(
             <form class="text-center border border-light p-5" action="#!">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
                 <MDBContainer>
                     <MDBRow>
                         <MDBCol md="6">
@@ -132,7 +136,7 @@ class Register extends React.Component {
                                     onChange={this.onChangePassword}
                                 />
                                 <div className="text-center mt-4">
-                                    <MDBBtn color="black" type="submit">
+                                    <MDBBtn color="info" type="submit">
                                         Register
                                     </MDBBtn>
                                 </div>
