@@ -11,6 +11,7 @@ import {
     NavLink
 } from "react-router-dom";
 import { MDBJumbotron, MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCardTitle, MDBIcon } from "mdbreact";
+import Navi from './Navbar'
 
 class Login extends Component {
     constructor(props) {
@@ -58,6 +59,7 @@ class Login extends Component {
     render() {
         return (
             <div className="login">
+                <Navi/>
             <form className="text-center border border-light p-5" action="#!">
                 <MDBContainer className="ContainLogin">
                     <MDBRow>
@@ -97,6 +99,13 @@ class Login extends Component {
                                     <Link to='/Recruteur'><MDBBtn color="info" type="button">Vous êtres recruteur ?</MDBBtn></Link>
                                 </div>
                             </form>
+                        </MDBCol>
+                        <MDBCol md="6">
+                            <h1 font-weight-bold>Découvrez.</h1>
+                            <h1 className="font-weight-bold">Inscription gratuite</h1>
+                            <h1 className="font-weight-bold">Job saisonniers.</h1>
+                            <h1 className="font-weight-bold">Des Extras.</h1>
+                            <h1 className="font-weight-bold">Proche de chez vous.</h1>
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Redirect} from 'react-router-dom'
 import axios from 'axios'
+import Navi from './Navbar'
 import { MDBJumbotron, MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCardTitle, MDBIcon } from "mdbreact";
 
 class Register extends React.Component {
@@ -72,7 +73,12 @@ class Register extends React.Component {
             return( <Redirect to={"/Login"}/>);
         }
         return(
-            <form class="text-center border border-light p-5" action="#!">
+            <div>
+            <Navi/>
+            <form class="text-center  p-5" action="#!">
+                <br/>
+                <br/>
+                <br/>
                 <br/>
                 <br/>
                 <br/>
@@ -142,9 +148,19 @@ class Register extends React.Component {
                                 </div>
                             </form>
                         </MDBCol>
+                        <MDBCol md="6">
+                            <div class="col envi">
+                                <h1 font-weight-bold>Inscription.</h1>
+                                <h1 className="font-weight-bold">Gratuite</h1>
+                                <h1 className="font-weight-bold">Job saisonniers.</h1>
+                                <h1 className="font-weight-bold">Des Extras.</h1>
+                                <h1 className="font-weight-bold">Proche de chez vous.</h1>
+                            </div>
+                        </MDBCol>
                     </MDBRow>
                 </MDBContainer>
             </form>
+            </div>
         );
     }
 }

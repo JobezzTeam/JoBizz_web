@@ -61,7 +61,7 @@ router.post('/register',(req, res, err) => {
         password = bcrypt.hashSync(password, 10);
         const newUser = new User({nom, prenom, email, password});//on stock les info dans NewUser
         console.log(password);
-        newUser.save((err)=> {//la fonction save permet de sauvegarder les donnée dans la base de donné
+        newUser.save((err) => {//la fonction save permet de sauvegarder les donnée dans la base de donné
             if (err) {
                 return res.send({
                     success: false,
