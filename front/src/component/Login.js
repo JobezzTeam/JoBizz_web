@@ -10,7 +10,7 @@ import {
     Link,
     NavLink
 } from "react-router-dom";
-import { MDBJumbotron, MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCardTitle, MDBIcon } from "mdbreact";
+import { MDBJumbotron, MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCardTitle, MDBIcon, MDBInput } from "mdbreact";
 import Navi from './Navbar'
 
 class Login extends Component {
@@ -60,29 +60,25 @@ class Login extends Component {
         return (
             <div className="login">
                 <Navi/>
-            <form className="text-center border border-light p-5" action="#!">
+            <form className="text-center p-5" action="#!">
                 <MDBContainer className="ContainLogin">
                     <MDBRow>
                         <MDBCol md="6">
                             <form onSubmit={this.handleSubmit}>
-                                <p className="h4 text-center mb-4">Sign in</p>
-                                <label htmlFor="defaultFormLoginEmailEx" className="grey-text">
-                                    Your email
-                                </label>
-                                <input
+                                <p className="h4 text-center mb-4"><strong>Sign in</strong></p>
+                                <MDBInput
+                                    size="lg"
+                                    label="email"
                                     type="email"
-                                    id="defaultFormLoginEmailEx"
                                     className="form-control"
                                     value={this.state.email}
                                     onChange={this.onChangeEmail}
                                 />
                                 <br/>
-                                <label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
-                                    Your password
-                                </label>
-                                <input
+                                <MDBInput
+                                    size="lg"
+                                    label="password"
                                     type="password"
-                                    id="defaultFormLoginPasswordEx"
                                     className="form-control"
                                     value={this.state.password}
                                     onChange={this.onChangePassword}
@@ -96,7 +92,7 @@ class Login extends Component {
                                     <Link to='/Register'><MDBBtn color="info" type="button">S'enregister</MDBBtn></Link>
                                 </div>
                                 <div>
-                                    <Link to='/Recruteur'><MDBBtn color="info" type="button">Vous êtres recruteur ?</MDBBtn></Link>
+                                    <Link to='/RegisterRecruteur'><MDBBtn color="info" type="button">Vous êtres recruteur ?</MDBBtn></Link>
                                 </div>
                             </form>
                         </MDBCol>

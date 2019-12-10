@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import {Redirect} from 'react-router-dom'
 import axios from 'axios'
-import { MDBJumbotron, MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCardTitle, MDBIcon } from "mdbreact";
+import {MDBJumbotron, MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCardTitle, MDBIcon, MDBInput} from "mdbreact";
 import sendAnnonce from './SendAnnonce'
 import Navi from '../Navbar'
 
-const style = {
-
-}
 class RegisterRecruteur extends React.Component {
     constructor(props) {
         super(props);
@@ -86,91 +83,75 @@ class RegisterRecruteur extends React.Component {
         return(
             <div>
                 <Navi/>
-            <div class="row posi">
-                <div class="col">
-                            <form  class="text-center p-5" onSubmit={this.handleSubmit}>
-                                <label htmlFor="defaultFormRegisterNameEx" className="grey-text">
-                                    Nom
-                                </label>
-                                <input
-                                    placeholder="Nom"
-                                    type="nom"
-                                    name="nom"
-                                    id="defaultFormRegisterNomEx"
-                                    className="form-control"
-                                    value={this.state.nom}
-                                    onChange={this.onChangeNom}
-                                    size="4"
-                                />
-                                <br />
-                                <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">
-                                    Prenom
-                                </label>
-                                <input
-                                    placeholder="Prenom"
-                                    type="prenom"
-                                    name="prenom"
-                                    value={this.state.prenom}
-                                    id="defaultFormRegisterPrenomlEx"
-                                    className="form-control"
-                                    onChange={this.onChangePrenom}
-                                />
-                                <br/>
-                                <label htmlFor="defaultFormRegisterCompanyEx" className="grey-text">
-                                    Nom de l'entreprise
-                                </label>
-                                <input
-                                    placeholder="entreprise"
-                                    type="company"
-                                    name="company"
-                                    value={this.state.company}
-                                    id="defaultFormRegisterCompanyEx"
-                                    className="form-control"
-                                    onChange={this.onChangeCompany}
-                                />
-                                <br />
-                                <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">
-                                    Your email or Company Email
-                                </label>
-                                <input
-                                    placeholder="Type email"
-                                    type="email"
-                                    name="email"
-                                    value={this.state.email}
-                                    id="defaultFormRegisterEmailEx"
-                                    className="form-control"
-                                    onChange={this.onChangeEmail}
-                                />
-                                <br />
-                                <label
-                                    htmlFor="defaultFormRegisterPasswordEx"
-                                    className="grey-text"
-                                >
-                                    Your password
-                                </label>
-                                <input
-                                    placeholder="Type password"
-                                    name="password"
-                                    type="password"
-                                    value={this.state.password}
-                                    id="defaultFormRegisterPasswordEx"
-                                    className="form-control"
-                                    onChange={this.onChangePassword}
-                                />
-                                <div className="text-center mt-4">
-                                    <MDBBtn color="info" type="submit">
-                                        Register
-                                    </MDBBtn>
+                <form className="text-center p-5" action="#!">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <MDBContainer>
+                        <MDBRow>
+                            <MDBCol md="6">
+                                <form onSubmit={this.handleSubmit}>
+                                    <h1><strong>Sign up</strong></h1>
+                                    <MDBInput
+                                        size="lg"
+                                        label="nom"
+                                        className="form-control"
+                                        value={this.state.nom}
+                                        onChange={this.onChangeNom}
+                                    />
+                                    <MDBInput
+                                        size="lg"
+                                        label="Prenom"
+                                        value={this.state.prenom}
+                                        className="form-control"
+                                        onChange={this.onChangePrenom}
+                                    />
+                                    <MDBInput
+                                        size="lg"
+                                        label="Email"
+                                        type="email"
+                                        value={this.state.email}
+                                        className="form-control"
+                                        onChange={this.onChangeEmail}
+                                    />
+                                    <MDBInput
+                                        size="lg"
+                                        label="company"
+                                        value={this.state.company}
+                                        className="form-control"
+                                        onChange={this.onChangeEmail}
+                                    />
+                                    <MDBInput
+                                        size="lg"
+                                        label="Password"
+                                        type="password"
+                                        value={this.state.password}
+                                        className="form-control"
+                                        onChange={this.onChangePassword}
+                                    />
+                                    <div className="text-center mt-4">
+                                        <MDBBtn color="info" type="submit">
+                                            Register
+                                        </MDBBtn>
+                                    </div>
+                                </form>
+                            </MDBCol>
+                            <MDBCol md="6">
+                                <div className="col envi">
+                                    <h1 font-weight-bold>Recrutement.</h1>
+                                    <h1 className="font-weight-bold">Le meilleur JoBeur</h1>
+                                    <h1 className="font-weight-bold">Rapide.</h1>
+                                    <h1 className="font-weight-bold">Dépanange</h1>
+                                    <h1 className="font-weight-bold">Autour de vous</h1>
                                 </div>
-                            </form>
-                </div>
-                <div class="col envi">
-                    <h1 font-weight-bold>Recrutez.</h1>
-                    <h1 className="font-weight-bold">Trouvez le meilleur personnel</h1>
-                    <h1 className="font-weight-bold">Rapidement</h1>
-                    <h1 className="font-weight-bold">Facilement</h1>
-                </div>
-            </div>
+                            </MDBCol>
+                        </MDBRow>
+                    </MDBContainer>
+                </form>
             </div>
         );
     }

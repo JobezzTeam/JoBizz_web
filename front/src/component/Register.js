@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Redirect} from 'react-router-dom'
 import axios from 'axios'
 import Navi from './Navbar'
-import { MDBJumbotron, MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCardTitle, MDBIcon } from "mdbreact";
+import { MDBJumbotron, MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCardTitle, MDBIcon, MDBInput} from "mdbreact";
 
 class Register extends React.Component {
     constructor(props) {
@@ -75,7 +75,7 @@ class Register extends React.Component {
         return(
             <div>
             <Navi/>
-            <form class="text-center  p-5" action="#!">
+            <form class="text-center border border-light   p-5" action="#!">
                 <br/>
                 <br/>
                 <br/>
@@ -87,57 +87,34 @@ class Register extends React.Component {
                     <MDBRow>
                         <MDBCol md="6">
                             <form onSubmit={this.handleSubmit}>
-                                <label htmlFor="defaultFormRegisterNameEx" className="grey-text">
-                                    Nom
-                                </label>
-                                <input
-                                    placeholder="Nom"
-                                    type="nom"
-                                    name="nom"
-                                    id="defaultFormRegisterNomEx"
+                                <h1><strong>Sign up</strong></h1>
+                                <MDBInput
+                                    size="lg"
+                                    label="nom"
                                     className="form-control"
                                     value={this.state.nom}
                                     onChange={this.onChangeNom}
                                 />
-                                <br />
-                                <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">
-                                    Prenom
-                                </label>
-                                <input
-                                    placeholder="Prenom"
-                                    type="prenom"
-                                    name="prenom"
+                                <MDBInput
+                                    size="lg"
+                                    label="Prenom"
                                     value={this.state.prenom}
-                                    id="defaultFormRegisterPrenomlEx"
                                     className="form-control"
                                     onChange={this.onChangePrenom}
                                 />
-                                <br />
-                                <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">
-                                    Your email
-                                </label>
-                                <input
-                                    placeholder="Type email"
+                                <MDBInput
+                                    size="lg"
+                                    label="Email"
                                     type="email"
-                                    name="email"
                                     value={this.state.email}
-                                    id="defaultFormRegisterEmailEx"
                                     className="form-control"
                                     onChange={this.onChangeEmail}
                                 />
-                                <br />
-                                <label
-                                    htmlFor="defaultFormRegisterPasswordEx"
-                                    className="grey-text"
-                                >
-                                    Your password
-                                </label>
-                                <input
-                                    placeholder="Type password"
-                                    name="password"
+                                <MDBInput
+                                    size="lg"
+                                    label="Password"
                                     type="password"
                                     value={this.state.password}
-                                    id="defaultFormRegisterPasswordEx"
                                     className="form-control"
                                     onChange={this.onChangePassword}
                                 />
