@@ -1,6 +1,5 @@
 import React, { Component, useState, useRef, useEffect } from 'react'
 import { Map, GoogleApiWrapper, Marker, Polygon, InfoWindow } from 'google-maps-react';
-import { usePosition } from 'use-position';
 import GoogleMapReact from 'google-map-react';
 import { MDBCard, MDBCardTitle, MDBCardText, MDBContainer } from "mdbreact";
 import "./UserPage.css"
