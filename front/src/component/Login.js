@@ -92,7 +92,7 @@ class Login extends Component {
                                     <Link to='/Register'><MDBBtn color="info" type="button">S'enregister</MDBBtn></Link>
                                 </div>
                                 <div>
-                                    <Link to='/RegisterRecruteur'><MDBBtn color="info" type="button">Vous êtres recruteur ?</MDBBtn></Link>
+                                    <Link to='/LoginRecruteur'><MDBBtn color="info" type="button">Vous êtres recruteur ?</MDBBtn></Link>
                                 </div>
                             </form>
                         </MDBCol>

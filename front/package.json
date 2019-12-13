@@ -13,11 +13,14 @@
     "mdbreact": "^4.23.0",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
+    "react-bootstrap-sidebar": "0.0.1",
     "react-dom": "^16.12.0",
     "react-google-maps": "^9.4.5",
     "react-mobile-store-button": "0.0.6",
     "react-preloaders": "^3.0.3",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "rsuite": "^4.1.4",
+    "startbootstrap-simple-sidebar": "^5.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

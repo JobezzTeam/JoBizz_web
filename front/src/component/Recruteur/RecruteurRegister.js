@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import {Redirect} from 'react-router-dom'
 import axios from 'axios'
 import {MDBJumbotron, MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCardTitle, MDBIcon, MDBInput} from "mdbreact";
-import sendAnnonce from './SendAnnonce'
 import Navi from '../Navbar'
+import RecruteurLogin from './RecruteurLogin'
 
 class RegisterRecruteur extends React.Component {
     constructor(props) {
@@ -63,12 +63,11 @@ class RegisterRecruteur extends React.Component {
         };
         axios.post("http://localhost:4000/recruteur/Register", newRecruteur)
             .then((response) => {
-                const obj = JSON.stringify(response.data);
-                const res = JSON.parse(obj);
-                if (res.status === 200) {
+                console.log(response);
+                if (response.status === 200) {
                     this.setState({isRegister:true});
                 }
-                else if (res.status === 400) {
+                else if (response.status === 400) {
                     this.setState({isRegister: false});
                 }
             }, (error) => {
@@ -78,7 +77,7 @@ class RegisterRecruteur extends React.Component {
     render() {
         const { isRegister } = this.state;
         if (isRegister === true) {
-            return( <Redirect to={"/SendAnnonce"}/>);
+            return( <Redirect to={"/LoginRecruteur"}/>);
         }
         return(
             <div>
@@ -123,7 +122,7 @@ class RegisterRecruteur extends React.Component {
                                         label="company"
                                         value={this.state.company}
                                         className="form-control"
-                                        onChange={this.onChangeEmail}
+                                        onChange={this.onChangeCompany}
                                     />
                                     <MDBInput
                                         size="lg"
@@ -142,10 +141,9 @@ class RegisterRecruteur extends React.Component {
                             </MDBCol>
                             <MDBCol md="6">
                                 <div className="col envi">
-                                    <h1 font-weight-bold>Recrutement.</h1>
+                                    <h1 font-weight-bold>Inscrivez vous</h1>
                                     <h1 className="font-weight-bold">Le meilleur JoBeur</h1>
                                     <h1 className="font-weight-bold">Rapide.</h1>
-                                    <h1 className="font-weight-bold">Dépanange</h1>
                                     <h1 className="font-weight-bold">Autour de vous</h1>
                                 </div>
                             </MDBCol>

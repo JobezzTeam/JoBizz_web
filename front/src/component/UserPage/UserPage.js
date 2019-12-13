@@ -12,10 +12,11 @@ const Marker1 = (props) => {
         <React.Fragment>
             <div
                 style={{
-                    border: "5px solid white",
+                    border: "5px solid",
                     borderRadius: 20,
                     height: 20,
-                    width: 20
+                    width: 20,
+                    color: "red"
                 }}
             />
             {/* Below is info window component */}
@@ -68,6 +69,13 @@ export class UserPage extends Component {
             address:'',
             exlat: '',
             exlon: '',
+
+            name1:'',
+            desc1: '',
+            price1: '',
+            address1:'',
+            exlat1: '',
+            exlon1: '',
             show : false
         };
         this.logout = this.logout.bind(this);
@@ -84,24 +92,14 @@ export class UserPage extends Component {
         const tokken = localStorage.token;
         const decode = jwtDecode(tokken);
 
-        fetch("http://localhost:4000/annonce/getJob")
-        .then(response => response.json())
-            .then((res) => {
-                console.log(res);
-                this.setState({
-                    exlat : res[0].lat,
-                    exlon : res[0].lon,
-                    name : res[0].title,
-                    desc : res[0].desc,
-                    price : res[0].price,
-                    address : res[0].address
-                })
-                console.log(res[0].lat);
-                console.log(res[0].lon);
-
-            })
+        this.setState({
+            prenom : decode.prenom,
+            nom : decode.nom
+        })
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(location => {
+                console.log("------" + location.coords.latitude);
+                console.log("-----" + location.coords.longitude);
                 this.setState({
                     latMe: location.coords.latitude,
                     lonMe: location.coords.longitude
@@ -109,10 +107,30 @@ export class UserPage extends Component {
 
             });
         }
-        this.setState({
-            prenom : decode.prenom,
-            nom : decode.nom
-        })
+        fetch("http://localhost:4000/annonce/getJob")
+        .then(response => response.json())
+            .then((res) => {
+                console.log(res);
+                    this.setState({
+                        exlat: res[0].lat,
+                        exlon: res[0].lon,
+                        name: res[0].title,
+                        desc: res[0].desc,
+                        price: res[0].price,
+                        address: res[0].address,
+
+
+                        exlat1: res[1].lat,
+                        exlon1: res[1].lon,
+                        name1: res[1].title,
+                        desc1: res[1].desc,
+                        price1: res[1].price,
+                        address1: res[1].address
+                    })
+                console.log(res[0].lat);
+                console.log(res[0].lon);
+
+            })
     }
 
     _onChildClick = (key, childProps) => {
@@ -125,7 +143,7 @@ export class UserPage extends Component {
                 <div id="viewport">
                     <div id="sidebar">
                         <header>
-                            <p style={{color: "white"}}><strong>Bienvenue {this.state.nom}</strong></p>
+                            <p style={{color: "white"}}><strong>{this.state.nom}</strong></p>
                         </header>
                         <div>
                             <ul style={{color: "white"}} type="button" class="list-group"> Compte</ul>
@@ -158,6 +176,16 @@ export class UserPage extends Component {
                                     address={this.state.address}
                                     lat={this.state.exlat}
                                     lng={this.state.exlon}
+                                    color="red"
+                                    show={this.state.show}
+                                />
+                                <Marker1
+                                    title={this.state.name1}
+                                    desc={this.state.desc1}
+                                    price={this.state.price1}
+                                    address={this.state.address1}
+                                    lat={this.state.exlat1}
+                                    lng={this.state.exlon1}
                                     color="red"
                                     show={this.state.show}
                                 />

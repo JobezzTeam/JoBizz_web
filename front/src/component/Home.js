@@ -24,6 +24,9 @@ import Section3 from './Section3';
 import Footer from './Footer';
 import back from "../media/Image_Paris_Pins.png"
 import corner from "../media/Rect-blue.png"
+import RecruteurLogin from "./Recruteur/RecruteurLogin"
+import RecruteurHome from "./Recruteur/RecruteurHome"
+import sendAnnonce from "./Recruteur/SendAnnonce"
 
 function Presentation() {
     return (
@@ -65,6 +68,8 @@ class LandingPage extends Component {
                     <Route path="/Register" component={Register}/>
                     <Route path="/UserPage" component={UserPage}/>
                     <Route path="/RegisterRecruteur" component={RecruteurRegister}/>
+                    <Route path="/LoginRecruteur" component={RecruteurLogin}/>
+                    <Route path="/HomeRecruteur" component={RecruteurHome}/>
                 </Router>
             </div>
         );
