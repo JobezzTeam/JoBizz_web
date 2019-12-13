@@ -17,8 +17,12 @@
     background-color: #000;
     border: 2px solid #fff;
     border-radius: 100%;
-    user-select: none;
-    transform: translate(-50%, -50%);
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 &:hover {
      z-index: 1;
  }
@@ -30,7 +34,8 @@
     border-radius: 50% 50% 50% 0;
     background: #00cae9;
     position: absolute;
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
     left: 50%;
     top: 50%;
     margin: -20px 0 0 -20px;
@@ -46,9 +51,12 @@
 }
 
 .bounce {
-    animation-name: bounce;
-    animation-fill-mode: both;
-    animation-duration: 1s;
+    -webkit-animation-name: bounce;
+            animation-name: bounce;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
 }
 
 .pulse {
@@ -60,7 +68,8 @@
     left: 50%;
     top: 50%;
     margin: 11px 0px 0px -12px;
-    transform: rotateX(55deg);
+    -webkit-transform: rotateX(55deg);
+            transform: rotateX(55deg);
     z-index: -2;
 }
 .pulse:after {
@@ -70,16 +79,21 @@
     width: 40px;
     position: absolute;
     margin: -13px 0 0 -13px;
-    animation: pulsate 1s ease-out;
-    animation-iteration-count: infinite;
+    -webkit-animation: pulsate 1s ease-out;
+            animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
     opacity: 0;
-    box-shadow: 0 0 1px 2px #00cae9;
-    animation-delay: 1.1s;
+    -webkit-box-shadow: 0 0 1px 2px #00cae9;
+            box-shadow: 0 0 1px 2px #00cae9;
+    -webkit-animation-delay: 1.1s;
+            animation-delay: 1.1s;
 }
 
-@keyframes pulsate {
+@-webkit-keyframes pulsate {
     0% {
-        transform: scale(0.1, 0.1);
+        -webkit-transform: scale(0.1, 0.1);
+                transform: scale(0.1, 0.1);
         opacity: 0;
     }
 
@@ -88,28 +102,75 @@
     }
 
     100% {
-        transform: scale(1.2, 1.2);
+        -webkit-transform: scale(1.2, 1.2);
+                transform: scale(1.2, 1.2);
         opacity: 0;
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        -webkit-transform: scale(0.1, 0.1);
+                transform: scale(0.1, 0.1);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1.2, 1.2);
+                transform: scale(1.2, 1.2);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes bounce {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-2000px) rotate(-45deg);
+                transform: translateY(-2000px) rotate(-45deg);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translateY(30px) rotate(-45deg);
+                transform: translateY(30px) rotate(-45deg);
+    }
+
+    80% {
+        -webkit-transform: translateY(-10px) rotate(-45deg);
+                transform: translateY(-10px) rotate(-45deg);
+    }
+
+    100% {
+        -webkit-transform: translateY(0) rotate(-45deg);
+                transform: translateY(0) rotate(-45deg);
     }
 }
 
 @keyframes bounce {
     0% {
         opacity: 0;
-        transform: translateY(-2000px) rotate(-45deg);
+        -webkit-transform: translateY(-2000px) rotate(-45deg);
+                transform: translateY(-2000px) rotate(-45deg);
     }
 
     60% {
         opacity: 1;
-        transform: translateY(30px) rotate(-45deg);
+        -webkit-transform: translateY(30px) rotate(-45deg);
+                transform: translateY(30px) rotate(-45deg);
     }
 
     80% {
-        transform: translateY(-10px) rotate(-45deg);
+        -webkit-transform: translateY(-10px) rotate(-45deg);
+                transform: translateY(-10px) rotate(-45deg);
     }
 
     100% {
-        transform: translateY(0) rotate(-45deg);
+        -webkit-transform: translateY(0) rotate(-45deg);
+                transform: translateY(0) rotate(-45deg);
     }
 }
 
@@ -122,8 +183,6 @@
 #viewport {
     padding-left: 250px;
     -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
@@ -145,8 +204,6 @@
     overflow-y: auto;
     background: #2AA0E0;
     -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
@@ -166,7 +223,6 @@
 #sidebar header a:hover {
     color: #fff;
 }
-
 
 #sidebar .nav a{
     background: none;

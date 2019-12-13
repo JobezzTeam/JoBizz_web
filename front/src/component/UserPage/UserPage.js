@@ -136,24 +136,31 @@ export class UserPage extends Component {
     _onChildClick = (key, childProps) => {
         this.setState({show: !this.state.show})
     }
-
+    
     render() {
+        var divStyle = {
+            // backgroundColor: 'red',
+            padding: "10%",
+            textAlign: 'center'
+        };
+        var ulStyle = {
+            color: "black",
+            padding: "5%",
+            marginBottom: "15%"
+        }
         return (
             <div className="main">
                 <div id="viewport">
                     <div id="sidebar">
                         <header>
-                            <p style={{color: "white"}}><strong>{this.state.nom}</strong></p>
+                            <p style={{color: "white"}}><strong>Welcome 👉 {this.state.nom}</strong></p>
                         </header>
-                        <div>
-                            <ul style={{color: "white"}} type="button" class="list-group"> Compte</ul>
-                            <br/>
-                            <ul style={{color: "white"}} type="button" className="list-group"> Contrat</ul>
-                            <br/>
-                            <ul style={{color: "white"}} type="button" className="list-group"> travaux effectué</ul>
-                            <br/>
-                            <ul style={{color: "white"}} type="button" className="list-group"> Paramètre</ul>
-                            <MDBBtn style={{color: "white"}} onClick={this.logout}>Logout</MDBBtn>
+                        <div style={divStyle}>
+                            <ul style={ulStyle} type="button" className="list-group">Compte </ul>
+                            <ul style={ulStyle} type="button" className="list-group">Contrat 🆚 </ul>
+                            <ul style={ulStyle} type="button" className="list-group">Travaux effectué ✅</ul>
+                            <ul style={ulStyle} type="button" className="list-group">Paramètre </ul>
+                            <MDBBtn style={{color: "white", marginTop: "25%"}} onClick={this.logout}>Logout</MDBBtn>
                         </div>
                     </div>
                     <div style={{ height: '100vh', width: '125%' }}>
