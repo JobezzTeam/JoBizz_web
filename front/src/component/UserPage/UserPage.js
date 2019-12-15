@@ -1,45 +1,39 @@
 import React, { Component, useState, useRef, useEffect } from 'react'
-import { Map, GoogleApiWrapper, Marker, Polygon, InfoWindow } from 'google-maps-react';
 import GoogleMapReact from 'google-map-react';
 import { MDBCard, MDBCardTitle, MDBCardText, MDBContainer } from "mdbreact";
 import "./UserPage.css"
 import jwtDecode from 'jwt-decode'
-import {MDBBtn} from "mdbreact"
+import {MDBBtn, MDBTooltip} from "mdbreact"
+import { Icon } from 'react-icons-kit'
+import {mapPin} from 'react-icons-kit/fa/mapPin'
+import Popover from 'react-bootstrap/Popover'
+import Button from 'react-bootstrap/Button'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 
-const Marker1 = (props) => {
-    const {title, price, desc, address} = props;
+
+const Marker = (props) => {
+    const {name, title,  price, desc, address} = props;
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Title as="h3" style={{color:"black"}}><strong>{title}</strong></Popover.Title>
+            <Popover.Content>
+                <p>{desc}</p>
+                <p> Rénumération: {price}</p>
+                <p>{address}</p>
+            </Popover.Content>
+        </Popover>
+    );
     return (
-        <React.Fragment>
-            <div
-                style={{
-                    border: "5px solid",
-                    borderRadius: 20,
-                    height: 20,
-                    width: 20,
-                    color: "red"
-                }}
-            />
-            {/* Below is info window component */}
-            {props.show && (
-                <div>
-                    <MDBContainer>
-                        <MDBCard className="card-body" style={{width: "22rem", marginTop: "1rem"}}>
-                            <MDBCardTitle>{title}</MDBCardTitle>
-                            <MDBCardText>
-                                {desc}
-                            </MDBCardText>
-                            <div className="flex-row">
-                                <p>Prix : {price}</p>
-                                <p>Address : {address}</p>
-                            </div>
-                        </MDBCard>
-                    </MDBContainer>
+        <div style={{height: "50px", width: "50px"}}>
+            <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+                <div style={{ color: 'red' }}>
+                    <Icon size={20} icon={mapPin}/>
                 </div>
-            )}
-        </React.Fragment>
+            </OverlayTrigger>
+
+        </div>
     )
 }
-
 
 const Perso = (props: any) => {
     const { color, name, id } = props;
@@ -55,7 +49,7 @@ const Perso = (props: any) => {
     );
 };
 
-export class UserPage extends Component {
+export default class UserPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -133,10 +127,6 @@ export class UserPage extends Component {
             })
     }
 
-    _onChildClick = (key, childProps) => {
-        this.setState({show: !this.state.show})
-    }
-    
     render() {
         var divStyle = {
             // backgroundColor: 'red',
@@ -144,20 +134,21 @@ export class UserPage extends Component {
             textAlign: 'center'
         };
         var ulStyle = {
-            color: "black",
+            color: "white",
             padding: "5%",
-            marginBottom: "15%"
+            marginBottom: "15%",
+            fontSize: "120%"
         }
         return (
             <div className="main">
                 <div id="viewport">
                     <div id="sidebar">
                         <header>
-                            <p style={{color: "white"}}><strong>Welcome 👉 {this.state.nom}</strong></p>
+                            <p style={{color: "white"}}><strong>Welcome {this.state.nom}</strong></p>
                         </header>
                         <div style={divStyle}>
                             <ul style={ulStyle} type="button" className="list-group">Compte </ul>
-                            <ul style={ulStyle} type="button" className="list-group">Contrat 🆚 </ul>
+                            <ul style={ulStyle} type="button" className="list-group">Contrat 🆚</ul>
                             <ul style={ulStyle} type="button" className="list-group">Travaux effectué ✅</ul>
                             <ul style={ulStyle} type="button" className="list-group">Paramètre </ul>
                             <MDBBtn style={{color: "white", marginTop: "25%"}} onClick={this.logout}>Logout</MDBBtn>
@@ -167,34 +158,39 @@ export class UserPage extends Component {
                         <div className="map">
                             <GoogleMapReact
                                 bootstrapURLKeys={{ key: 'AIzaSyDW41KMRzwFp4m7Uht_53PiPHv0LSqXq5Y' }}
-                                defaultCenter={{lat: 48.8322, lng: 2.3561}}
+                                center={{lat: this.state.latMe, lng: this.state.lonMe}}
                                 defaultZoom={14}
-                                onChildClick={this._onChildClick}>
+>
                                 <Perso
                                     lat={this.state.latMe}
                                     lng={this.state.lonMe}
                                     text="My Marker"
                                     color="blue"
                                 />
-                                <Marker1
+                                <Marker
                                     title={this.state.name}
                                     desc={this.state.desc}
                                     price={this.state.price}
                                     address={this.state.address}
                                     lat={this.state.exlat}
                                     lng={this.state.exlon}
-                                    color="red"
                                     show={this.state.show}
                                 />
-                                <Marker1
+                                <Marker
                                     title={this.state.name1}
                                     desc={this.state.desc1}
                                     price={this.state.price1}
                                     address={this.state.address1}
                                     lat={this.state.exlat1}
                                     lng={this.state.exlon1}
-                                    color="red"
-                                    show={this.state.show}
+                                />
+                                <Marker
+                                    title={this.state.name1}
+                                    desc={this.state.desc1}
+                                    price={this.state.price1}
+                                    address={this.state.address1}
+                                    lat={this.state.exlat1}
+                                    lng={this.state.exlon1}
                                 />
                             </GoogleMapReact>
                         </div>
@@ -205,7 +201,3 @@ export class UserPage extends Component {
     }
 }
 
-
-export default GoogleApiWrapper({
-    apiKey: 'AIzaSyDW41KMRzwFp4m7Uht_53PiPHv0LSqXq5Y'
-})(UserPage);

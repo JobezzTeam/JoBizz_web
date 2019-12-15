@@ -70,6 +70,7 @@ class LandingPage extends Component {
                     <Route path="/RegisterRecruteur" component={RecruteurRegister}/>
                     <Route path="/LoginRecruteur" component={RecruteurLogin}/>
                     <Route path="/HomeRecruteur" component={RecruteurHome}/>
+                    <Route path="/sendAnnonce" component={sendAnnonce}/>
                 </Router>
             </div>
         );
