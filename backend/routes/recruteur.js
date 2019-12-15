@@ -86,7 +86,7 @@ router.post('/Login', (req, res) => {
                         prenom : user.prenom,
                         nom : user.nom,
                         email : user.email,
-                        company : company,
+                        company : user.company,
                     }
                     let token = jwt.sign(payload, config.secret, {expiresIn : 864000});
                         res.status(200).send({

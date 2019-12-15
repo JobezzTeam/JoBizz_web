@@ -4,6 +4,11 @@ import axios from 'axios'
 import {MDBBtn, MDBContainer, MDBRow, MDBCol, MDBInput} from "mdbreact";
 import Navi from '../Navbar'
 
+const style = {
+    backgroundColor: "#4095c6",
+    color : "white"
+}
+
 class RegisterRecruteur extends React.Component {
     constructor(props) {
         super(props);
@@ -79,7 +84,7 @@ class RegisterRecruteur extends React.Component {
             return( <Redirect to={"/LoginRecruteur"}/>);
         }
         return(
-            <div>
+            <div style={style}>
                 <Navi/>
                 <form className="text-center p-5" action="#!">
                     <br/>
@@ -94,43 +99,53 @@ class RegisterRecruteur extends React.Component {
                             <MDBCol md="6">
                                 <form onSubmit={this.handleSubmit}>
                                     <h1><strong>Sign up</strong></h1>
-                                    <MDBInput
-                                        size="lg"
-                                        label="nom"
-                                        className="form-control"
-                                        value={this.state.nom}
-                                        onChange={this.onChangeNom}
-                                    />
-                                    <MDBInput
-                                        size="lg"
-                                        label="Prenom"
-                                        value={this.state.prenom}
-                                        className="form-control"
-                                        onChange={this.onChangePrenom}
-                                    />
-                                    <MDBInput
-                                        size="lg"
-                                        label="Email"
-                                        type="email"
-                                        value={this.state.email}
-                                        className="form-control"
-                                        onChange={this.onChangeEmail}
-                                    />
-                                    <MDBInput
-                                        size="lg"
-                                        label="company"
-                                        value={this.state.company}
-                                        className="form-control"
-                                        onChange={this.onChangeCompany}
-                                    />
-                                    <MDBInput
-                                        size="lg"
-                                        label="Password"
-                                        type="password"
-                                        value={this.state.password}
-                                        className="form-control"
-                                        onChange={this.onChangePassword}
-                                    />
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInput">Nom</label>
+                                        <input
+                                            label="nom"
+                                            className="form-control"
+                                            value={this.state.nom}
+                                            onChange={this.onChangeNom}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInput">Prenom</label>
+                                        <input
+                                            label="Prenom"
+                                            className="form-control"
+                                            value={this.state.prenom}
+                                            onChange={this.onChangePrenom}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInput">Email</label>
+                                        <input
+                                            type="email"
+                                            label="email"
+                                            className="form-control"
+                                            value={this.state.email}
+                                            onChange={this.onChangeEmail}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInput">Company</label>
+                                        <input
+                                            label="Company"
+                                            className="form-control"
+                                            value={this.state.company}
+                                            onChange={this.onChangeCompany}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInput">Password</label>
+                                        <input
+                                            type="password"
+                                            label="Password"
+                                            className="form-control"
+                                            value={this.state.password}
+                                            onChange={this.onChangePassword}
+                                        />
+                                    </div>
                                     <div className="text-center mt-4">
                                         <MDBBtn color="info" type="submit">
                                             Register
@@ -148,6 +163,13 @@ class RegisterRecruteur extends React.Component {
                             </MDBCol>
                         </MDBRow>
                     </MDBContainer>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                 </form>
             </div>
         );

@@ -6,6 +6,10 @@ import {
     Link
 } from "react-router-dom";
 
+const style = {
+    backgroundColor: "#4095c6",
+    color : "white"
+}
 class RecruteurLogin extends Component {
     constructor(props) {
         super(props);
@@ -40,7 +44,7 @@ class RecruteurLogin extends Component {
         axios.post("http://localhost:4000/recruteur/Login", newUser)
             .then((response) => {
                 localStorage.setItem('token', response.data.token);
-                this.props.history.push('/')
+                this.props.history.push('/HomeRecruteur')
             }, (error) => {
                 console.log(error);
             });
@@ -48,7 +52,7 @@ class RecruteurLogin extends Component {
 
     render() {
         return (
-            <div className="login">
+            <div style={style} className="login">
                 <Navi/>
                 <form className="text-center p-5" action="#!">
                     <MDBContainer className="ContainLogin">
@@ -56,23 +60,27 @@ class RecruteurLogin extends Component {
                             <MDBCol md="6">
                                 <form onSubmit={this.handleSubmit}>
                                     <p className="h4 text-center mb-4"><strong>Connexion Recruteur</strong></p>
-                                    <MDBInput
-                                        size="lg"
-                                        label="email"
-                                        type="email"
-                                        className="form-control"
-                                        value={this.state.email}
-                                        onChange={this.onChangeEmail}
-                                    />
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInput">e-mail</label>
+                                        <input
+                                            type="email"
+                                            id="exampleInput"
+                                            className="form-control"
+                                            value={this.state.email}
+                                            onChange={this.onChangeEmail}
+                                        />
+                                    </div>
                                     <br/>
-                                    <MDBInput
-                                        size="lg"
-                                        label="password"
-                                        type="password"
-                                        className="form-control"
-                                        value={this.state.password}
-                                        onChange={this.onChangePassword}
-                                    />
+                                    <div className="form-group">
+                                        <label htmlFor="exampleInput">Password</label>
+                                        <input
+                                            type="password"
+                                            id="password"
+                                            className="form-control"
+                                            value={this.state.password}
+                                            onChange={this.onChangePassword}
+                                        />
+                                    </div>
                                     <div className="text-center mt-4">
                                         <MDBBtn color="info" type="submit">Login</MDBBtn>
                                         <div>{this.state.data}</div>

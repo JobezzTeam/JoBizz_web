@@ -7,6 +7,12 @@ import { Icon } from 'react-icons-kit'
 import {mapPin} from 'react-icons-kit/fa/mapPin'
 import Popover from 'react-bootstrap/Popover'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import {
+    BrowserRouter as Router,
+    Route,
+    Link,
+} from "react-router-dom";
+import Profile from "./Profile";
 
 
 const Marker = (props) => {
@@ -112,10 +118,10 @@ export default class UserPage extends Component {
                             <p style={{color: "white"}}><strong>Welcome {this.state.nom}</strong></p>
                         </header>
                         <div style={divStyle}>
-                            <ul style={ulStyle} type="button" className="list-group">Compte </ul>
-                            <ul style={ulStyle} type="button" className="list-group">Contrat 🆚</ul>
-                            <ul style={ulStyle} type="button" className="list-group">Travaux effectué ✅</ul>
-                            <ul style={ulStyle} type="button" className="list-group">Paramètre </ul>
+                                <Link to="/Profile"><ul style={ulStyle} type="button" className="list-group">Compte </ul></Link>
+                                <ul style={ulStyle} type="button" className="list-group">Contrat 🆚</ul>
+                                <ul style={ulStyle} type="button" className="list-group">Travaux effectué ✅</ul>
+                                <ul style={ulStyle} type="button" className="list-group">Paramètre </ul>
                             <MDBBtn style={{color: "white", marginTop: "25%"}} onClick={this.logout}>Logout</MDBBtn>
                         </div>
                     </div>
@@ -148,6 +154,9 @@ export default class UserPage extends Component {
                         </div>
                     </div>
                 </div>
+                <Router>
+                    <Route path="/Profile" component={Profile}/>
+                </Router>
             </div>
         );
     }
