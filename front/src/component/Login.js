@@ -1,16 +1,10 @@
-import React, { Component, useState, useRef, useEffect } from 'react'
+import React, { Component} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Redirect} from 'react-router-dom'
 import axios from 'axios';
-import UserPage from './UserPage/UserPage'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link,
-    NavLink
 } from "react-router-dom";
-import { MDBJumbotron, MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCardTitle, MDBIcon, MDBInput } from "mdbreact";
+import {MDBBtn, MDBContainer, MDBRow, MDBCol, MDBInput } from "mdbreact";
 import Navi from './Navbar'
 
 class Login extends Component {

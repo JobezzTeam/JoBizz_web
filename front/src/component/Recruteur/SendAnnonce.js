@@ -1,4 +1,4 @@
-import React, { Component, useState, useRef, useEffect } from 'react';
+import React from 'react';
 import axios from 'axios';
 
 const Style = {
@@ -85,7 +85,7 @@ class sendAnnonce extends React.Component {
       console.log(newJob);
       axios.post("http://localhost:4000/annonce/sendJob", newJob)
       .then((response) => {
-        if (response.status == 200) {
+        if (response.status === 200) {
           console.log("Sent")
         }
         else {

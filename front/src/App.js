@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react'
+import React, {Component} from 'react'
 import './App.css';
 import LandingPage from './component/Home'
 import { Lines } from 'react-preloaders';

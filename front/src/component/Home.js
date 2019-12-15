@@ -1,22 +1,15 @@
-import React, { Component, useState, useRef, useEffect } from 'react'
-import useWindowScrollPosition from '@rehooks/window-scroll-position'
-import Navbar from 'react-bootstrap/Navbar'
+import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MobileStoreButton from 'react-mobile-store-button';
 import Login from './Login'
 import Register from './Register'
 import RecruteurRegister from './Recruteur/RecruteurRegister'
 import UserPage from './UserPage/UserPage'
 import {
     BrowserRouter as Router,
-    Switch,
     Route,
     Link,
-    NavLink
 } from "react-router-dom";
-import { MDBBtn } from "mdbreact";
 import './StyleLanding.css'
-import Recruteur from './Recruteur/SendAnnonce';
 import './home.css'
 import Navi from './Navbar'
 import Section2 from './Section2';

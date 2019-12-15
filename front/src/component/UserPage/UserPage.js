@@ -1,18 +1,16 @@
-import React, { Component, useState, useRef, useEffect } from 'react'
+import React, { Component} from 'react'
 import GoogleMapReact from 'google-map-react';
-import { MDBCard, MDBCardTitle, MDBCardText, MDBContainer } from "mdbreact";
 import "./UserPage.css"
 import jwtDecode from 'jwt-decode'
-import {MDBBtn, MDBTooltip} from "mdbreact"
+import {MDBBtn} from "mdbreact"
 import { Icon } from 'react-icons-kit'
 import {mapPin} from 'react-icons-kit/fa/mapPin'
 import Popover from 'react-bootstrap/Popover'
-import Button from 'react-bootstrap/Button'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 
 
 const Marker = (props) => {
-    const {name, title,  price, desc, address} = props;
+    const {title,  price, desc, address} = props;
     const popover = (
         <Popover id="popover-basic">
             <Popover.Title as="h3" style={{color:"black"}}><strong>{title}</strong></Popover.Title>
@@ -57,20 +55,7 @@ export default class UserPage extends Component {
             prenom: '',
             latMe: '',
             lonMe: '',
-            name:'',
-            desc: '',
-            price: '',
-            address:'',
-            exlat: '',
-            exlon: '',
-
-            name1:'',
-            desc1: '',
-            price1: '',
-            address1:'',
-            exlat1: '',
-            exlon1: '',
-            show : false
+            data : []
         };
         this.logout = this.logout.bind(this);
     }
@@ -92,8 +77,6 @@ export default class UserPage extends Component {
         })
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(location => {
-                console.log("------" + location.coords.latitude);
-                console.log("-----" + location.coords.longitude);
                 this.setState({
                     latMe: location.coords.latitude,
                     lonMe: location.coords.longitude
@@ -105,25 +88,7 @@ export default class UserPage extends Component {
         .then(response => response.json())
             .then((res) => {
                 console.log(res);
-                    this.setState({
-                        exlat: res[0].lat,
-                        exlon: res[0].lon,
-                        name: res[0].title,
-                        desc: res[0].desc,
-                        price: res[0].price,
-                        address: res[0].address,
-
-
-                        exlat1: res[1].lat,
-                        exlon1: res[1].lon,
-                        name1: res[1].title,
-                        desc1: res[1].desc,
-                        price1: res[1].price,
-                        address1: res[1].address
-                    })
-                console.log(res[0].lat);
-                console.log(res[0].lon);
-
+                this.setState({data : res});
             })
     }
 
@@ -167,31 +132,18 @@ export default class UserPage extends Component {
                                     text="My Marker"
                                     color="blue"
                                 />
-                                <Marker
-                                    title={this.state.name}
-                                    desc={this.state.desc}
-                                    price={this.state.price}
-                                    address={this.state.address}
-                                    lat={this.state.exlat}
-                                    lng={this.state.exlon}
-                                    show={this.state.show}
-                                />
-                                <Marker
-                                    title={this.state.name1}
-                                    desc={this.state.desc1}
-                                    price={this.state.price1}
-                                    address={this.state.address1}
-                                    lat={this.state.exlat1}
-                                    lng={this.state.exlon1}
-                                />
-                                <Marker
-                                    title={this.state.name1}
-                                    desc={this.state.desc1}
-                                    price={this.state.price1}
-                                    address={this.state.address1}
-                                    lat={this.state.exlat1}
-                                    lng={this.state.exlon1}
-                                />
+                                {this.state.data.map(item => {
+                                    return (
+                                        <Marker
+                                            lat={item.lat}
+                                            lng={item.lon}
+                                            title={item.title}
+                                            desc={item.desc}
+                                            price={item.price}
+                                            address={item.address}
+                                        />
+                                    );
+                                })}
                             </GoogleMapReact>
                         </div>
                     </div>

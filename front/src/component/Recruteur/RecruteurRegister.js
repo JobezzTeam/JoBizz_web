@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Redirect} from 'react-router-dom'
 import axios from 'axios'
-import {MDBJumbotron, MDBBtn, MDBContainer, MDBRow, MDBCol, MDBCardTitle, MDBIcon, MDBInput} from "mdbreact";
+import {MDBBtn, MDBContainer, MDBRow, MDBCol, MDBInput} from "mdbreact";
 import Navi from '../Navbar'
-import RecruteurLogin from './RecruteurLogin'
 
 class RegisterRecruteur extends React.Component {
     constructor(props) {
