@@ -3,9 +3,12 @@ const path = require('path');
 const app = express();
 var cors = require('cors');
 var mongoose = require('mongoose');
-
+const socketio = require('socket.io');
+const http = require("http");
 var port = process.env.PORT || 4000;
 
+const server = http.createServer(app);
+const socket = socketio(server);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());

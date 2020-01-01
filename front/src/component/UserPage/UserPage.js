@@ -14,7 +14,6 @@ import {
 } from "react-router-dom";
 import Profile from "./Profile";
 
-
 const Marker = (props) => {
     const {title,  price, desc, address} = props;
     const popover = (
@@ -31,7 +30,7 @@ const Marker = (props) => {
         <div style={{height: "50px", width: "50px"}}>
             <OverlayTrigger trigger="click" placement="right" overlay={popover}>
                 <div style={{ color: 'red' }}>
-                    <Icon size={20} icon={mapPin}/>
+                    <Icon size={23} icon={mapPin}/>
                 </div>
             </OverlayTrigger>
 

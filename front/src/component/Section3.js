@@ -13,10 +13,10 @@ class thirdSection extends Component {
         return(
             <MDBContainer>
                 <MDBRow center>
-                    <h1 className="Jobizz font-weight-bold">N'attends plus. JoBizz !</h1>
+                    <h1 style={{color: "#651FFF"}} className="Jobizz font-weight-bold">N'attend plus et télécharge JoBizz !</h1>
                 </MDBRow>
                 <MDBRow center>
-                    <h3 className="h3 font-weight-bold">Télécharger notre application mobile disponible sur iOS & Android</h3>
+                    <h3 className="h3 font-weight-bold"> application mobile disponible sur iOS & Android</h3>
                 </MDBRow>
                 <MDBRow className="pou">
                     <MDBCol size="6">
@@ -26,10 +26,6 @@ class thirdSection extends Component {
                         <img class="android" src={android} />
                     </MDBCol>
                 </MDBRow>
-                <MDBRow center>
-                    <p className="sizing font-weight-bold">Accéder à l'application Web.</p>
-                </MDBRow>
-                <MDBRow center><a href="something" class="button3_sec">Commencer</a></MDBRow>
             </MDBContainer>
         )
     };

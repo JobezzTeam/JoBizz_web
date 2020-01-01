@@ -36,7 +36,6 @@ function Presentation() {
                         <h1 className="font-weight-bold">Job saisonniers.</h1>
                         <h1 className="font-weight-bold">Des Extras.</h1>
                         <h1 className="font-weight-bold">Proche de chez vous.</h1>
-                        <img class="rect" src={corner} />
                         <div class="row" style={{marginTop: '30%'}}>
                             <h2 className="testee font-weight-bold">En savoir plus.</h2>
                             <Link to="/Login"><a href="something" class="button3">Commencer</a></Link>

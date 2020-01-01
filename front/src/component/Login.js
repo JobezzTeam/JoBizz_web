@@ -7,6 +7,7 @@ import {
 import {MDBBtn, MDBContainer, MDBRow, MDBCol, MDBInput } from "mdbreact";
 import Navi from './Navbar'
 
+
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -81,12 +82,8 @@ class Login extends Component {
                                     <MDBBtn color="info" type="submit">Login</MDBBtn>
                                     <div>{this.state.data}</div>
                                 </div>
-                                <br/>
                                 <div>
-                                    <Link to='/Register'><MDBBtn color="info" type="button">S'enregister</MDBBtn></Link>
-                                </div>
-                                <div>
-                                    <Link to='/LoginRecruteur'><MDBBtn color="info" type="button">Vous êtres recruteur ?</MDBBtn></Link>
+                                    <Link to='/Register'><MDBBtn style={{backgroundColor: "#651FFF"}} type="button">S'enregister</MDBBtn></Link>
                                 </div>
                             </form>
                         </MDBCol>
@@ -96,6 +93,10 @@ class Login extends Component {
                             <h1 className="font-weight-bold">Job saisonniers.</h1>
                             <h1 className="font-weight-bold">Des Extras.</h1>
                             <h1 className="font-weight-bold">Proche de chez vous.</h1>
+                            <br/>
+                            <div>
+                                <Link to='/LoginRecruteur'><MDBBtn c type="button">Vous êtres recruteur ?</MDBBtn></Link>
+                            </div>
                         </MDBCol>
                     </MDBRow>
                 </MDBContainer>

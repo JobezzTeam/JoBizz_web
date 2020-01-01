@@ -12,7 +12,7 @@ function Navi() {
         setChange(true)
     if (position.y <= changePosition && change)
         setChange(false)
-    let style = { backgroundColor: change ? '#FFFFFF' : "#FFFFFF", transition: "400ms ease", height: "100px",
+    let style = { backgroundColor: change ? '#1F1B24' : "#1F1B24", transition: "400ms ease", height: "100px",
         position: "fixed", right: 0, left: 0, top: 0};
 
     return (
