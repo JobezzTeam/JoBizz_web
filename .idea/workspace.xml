@@ -3,19 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5a2d26e5-bff3-46ed-bcfd-cc593a23c7b3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/component/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/component/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/component/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/Recruteur/RecruteurHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/component/Recruteur/RecruteurHome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/Section2.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/component/Section2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/Section3.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/component/Section3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/UserPage/UserPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/component/UserPage/UserPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/component/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/component/navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/section2.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/component/section2.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -60,7 +47,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/front/src/component/Login.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="508">
@@ -68,6 +55,24 @@
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/backend/node_modules/express/lib/router/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="239">
+                  <caret line="316" column="12" selection-start-line="316" selection-start-column="12" selection-end-line="316" selection-end-column="12" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/backend/app.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
                 </state>
               </provider>
             </entry>
@@ -198,28 +203,7 @@
             <path>
               <item name="JoBezzWepApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="JoBezzWepApp" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JoBezzWepApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JoBezzWepApp" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JoBezzWepApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JoBezzWepApp" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JoBezzWepApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JoBezzWepApp" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="UserPage" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -281,12 +265,12 @@
       <workItem from="1576747721419" duration="11000" />
       <workItem from="1576833141887" duration="1000" />
       <workItem from="1576849364286" duration="11000" />
-      <workItem from="1577851765633" duration="5153000" />
+      <workItem from="1577851765633" duration="5313000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56529000" />
+    <option name="totallyTimeSpent" value="56689000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -344,13 +328,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/models/User.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/node_modules/express/lib/response.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="770" column="9" selection-start-line="770" selection-start-column="9" selection-end-line="770" selection-end-column="9" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/models/Recruteur.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -469,13 +446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="48" lean-forward="true" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/front/src/component/Recruteur/RecruteurLogin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -558,6 +528,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/node_modules/express/lib/response.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="770" column="9" selection-start-line="770" selection-start-column="9" selection-end-line="770" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/front/src/component/Login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="508">
@@ -565,6 +542,20 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/node_modules/express/lib/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="316" column="12" selection-start-line="316" selection-start-column="12" selection-end-line="316" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
         </state>
       </provider>
     </entry>
