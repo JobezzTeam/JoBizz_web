@@ -181,7 +181,8 @@
 }
 
 #viewport {
-    padding-left: 250px;
+    padding-left: 0px;
+    padding-top: 0%;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
@@ -202,13 +203,13 @@
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #2AA0E0;
+    background: #21212E;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
 #sidebar header {
-    background-color: #2AA0E0;
+    background-color: #21212E;
     font-size: 30px;
     line-height: 52px;
     text-align: center;

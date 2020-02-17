@@ -5,12 +5,16 @@ import jwtDecode from 'jwt-decode'
 import {MDBBtn} from "mdbreact"
 import { Icon } from 'react-icons-kit'
 import {mapPin} from 'react-icons-kit/fa/mapPin'
-import Popover from 'react-bootstrap/Popover'
+import {
+    Popover,
+    Navbar
+} from 'react-bootstrap'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import {
     BrowserRouter as Router,
     Route,
     Link,
+    Switch
 } from "react-router-dom";
 import Profile from "./Profile";
 
@@ -24,6 +28,7 @@ const Marker = (props) => {
                 <p> Rénumération: {price}</p>
                 <p>{address}</p>
             </Popover.Content>
+            <MDBBtn style={{marginLeft:"15%", Width:"3%"}}>Postuler</MDBBtn>
         </Popover>
     );
     return (
@@ -33,7 +38,6 @@ const Marker = (props) => {
                     <Icon size={23} icon={mapPin}/>
                 </div>
             </OverlayTrigger>
-
         </div>
     )
 }
@@ -51,8 +55,202 @@ const Perso = (props: any) => {
         </div>
     );
 };
+const styleMap =  [
+    {
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#242f3e"
+            }
+        ]
+    },
+    {
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#746855"
+            }
+        ]
+    },
+    {
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#242f3e"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.locality",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#d59563"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#d59563"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#263c3f"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#6b9a76"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#38414e"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#212a37"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#9ca5b3"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#746855"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#1f2835"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#f3d19c"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#2f3948"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.station",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#d59563"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#17263c"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#515c6d"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#17263c"
+            }
+        ]
+    }
+]
 
-export default class UserPage extends Component {
+var NavStyle = {
+    margin: "10px",
+    color : "white",
+    fontSize: "1em",
+    fontWeight: "bold"
+};
+
+var NavStyle2 = {
+    margin: "40px",
+    fontSize:"1.8em",
+    color: "#46C2FF"
+}
+
+const Sidebar = () => {
+    return(
+               <Router>
+                <Navbar expand="lg" style={{backgroundColor : "#21212E"}} variant="dark">
+                        <Navbar.Brand>
+                            <strong style={NavStyle2}>JoBizz.</strong>
+                            <Link to={"UserPage"}><a style={NavStyle}>Map</a></Link>
+                            <Link to={"Profil"}><a style={NavStyle}>Profil</a></Link>
+                            <Link to={"Missions"}><a style={NavStyle}>Mes Missions</a></Link>
+                            <Link to={"/Paramètre"}><a style={NavStyle}>Paramètre</a></Link>
+                        </Navbar.Brand>
+                </Navbar>
+                <Switch>
+                    <Route path='/UserPage' component={UserPage}></Route>
+                    <Route path="/Profile" component={Profile}></Route>
+                </Switch>
+            </Router>
+        )
+}
+
+class UserPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -98,35 +296,15 @@ export default class UserPage extends Component {
     }
 
     render() {
-        var divStyle = {
-            // backgroundColor: 'red',
-            padding: "10%",
-            textAlign: 'center'
-        };
-        var ulStyle = {
-            color: "white",
-            padding: "5%",
-            marginBottom: "15%",
-            fontSize: "120%"
-        }
         return (
             <div className="main">
                 <div id="viewport">
-                    <div id="sidebar">
-                        <header>
-                            <p style={{color: "white"}}><strong>Welcome {this.state.nom}</strong></p>
-                        </header>
-                        <div style={divStyle}>
-                                <Link to="/Profile"><ul style={ulStyle} type="button" className="list-group">Compte </ul></Link>
-                                <ul style={ulStyle} type="button" className="list-group">Contrat 🆚</ul>
-                                <ul style={ulStyle} type="button" className="list-group">Travaux effectué ✅</ul>
-                                <ul style={ulStyle} type="button" className="list-group">Paramètre </ul>
-                            <MDBBtn style={{color: "white", marginTop: "25%"}} onClick={this.logout}>Logout</MDBBtn>
-                        </div>
-                    </div>
-                    <div style={{ height: '100vh', width: '125%' }}>
+                    <div style={{ height: '100vh', width: '205%' }}>
                         <div className="map">
                             <GoogleMapReact
+                                options={{
+                                    styles: styleMap,
+                                }}
                                 bootstrapURLKeys={{ key: 'AIzaSyDW41KMRzwFp4m7Uht_53PiPHv0LSqXq5Y' }}
                                 center={{lat: this.state.latMe, lng: this.state.lonMe}}
                                 defaultZoom={14}
@@ -153,11 +331,16 @@ export default class UserPage extends Component {
                         </div>
                     </div>
                 </div>
-                <Router>
-                    <Route path="/Profile" component={Profile}/>
-                </Router>
             </div>
         );
+    }
+}
+
+export default class HomeUser extends React.Component {
+    render() {
+        return (
+            <Sidebar/>
+        )
     }
 }
 

@@ -17,13 +17,15 @@
     "react-bootstrap-sidebar": "0.0.1",
     "react-dom": "^16.12.0",
     "react-feather": "^2.0.3",
+    "react-grid": "^4.0.3",
     "react-mobile-store-button": "0.0.6",
     "react-preloaders": "^3.0.3",
     "react-scripts": "3.2.0",
     "react-tooltip": "^3.11.1",
     "rsuite": "^4.1.4",
     "semantic-ui-react": "^0.88.2",
-    "startbootstrap-simple-sidebar": "^5.1.1"
+    "startbootstrap-simple-sidebar": "^5.1.1",
+    "styled-components": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

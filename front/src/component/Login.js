@@ -5,8 +5,7 @@ import {
     Link,
 } from "react-router-dom";
 import {MDBBtn, MDBContainer, MDBRow, MDBCol, MDBInput } from "mdbreact";
-import Navi from './Navbar'
-
+import { Header } from './landingPage/header'
 
 class Login extends Component {
     constructor(props) {
@@ -53,12 +52,12 @@ class Login extends Component {
 
     render() {
         return (
-            <div className="login">
-                <Navi/>
+            <div>
+                <Header/>
             <form className="text-center p-5" action="#!">
-                <MDBContainer className="ContainLogin">
+                <MDBContainer>
                     <MDBRow>
-                        <MDBCol md="6">
+                        <MDBCol>
                             <form onSubmit={this.handleSubmit}>
                                 <p className="h4 text-center mb-4"><strong>Sign in</strong></p>
                                 <MDBInput
