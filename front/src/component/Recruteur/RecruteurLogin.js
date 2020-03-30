@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import axios from "axios";
-import Navi from "../Navbar";
+import Navi from "../Home/Navbar";
 import {MDBBtn, MDBCol, MDBContainer, MDBInput, MDBRow} from "mdbreact";
 import {
     Link
 } from "react-router-dom";
+
+import { Header } from '../landingPage/header'
 
 const style = {
     backgroundColor: "#4095c6",
@@ -52,8 +54,8 @@ class RecruteurLogin extends Component {
 
     render() {
         return (
-            <div style={style} className="login">
-                <Navi/>
+            <div>
+                <Header/>
                 <form className="text-center p-5" action="#!">
                     <MDBContainer className="ContainLogin">
                         <MDBRow>

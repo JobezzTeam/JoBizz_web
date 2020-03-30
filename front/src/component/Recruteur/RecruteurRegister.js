@@ -2,7 +2,7 @@ import React from 'react'
 import {Redirect} from 'react-router-dom'
 import axios from 'axios'
 import {MDBBtn, MDBContainer, MDBRow, MDBCol, MDBInput} from "mdbreact";
-import Navi from '../Navbar'
+import Navi from '../Home/Navbar'
 
 const style = {
     backgroundColor: "#4095c6",

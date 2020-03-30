@@ -1,15 +1,14 @@
-import React, { Component} from 'react'
+import React, {Component, useState} from 'react'
 import GoogleMapReact from 'google-map-react';
 import "./UserPage.css"
 import jwtDecode from 'jwt-decode'
-import {MDBBtn} from "mdbreact"
+import {MDBBtn, MDBPopover, MDBPopoverBody, MDBPopoverHeader, MDBContainer} from "mdbreact"
 import { Icon } from 'react-icons-kit'
-import {mapPin} from 'react-icons-kit/fa/mapPin'
+import {pin_2} from 'react-icons-kit/ikons/pin_2'
 import {
     Popover,
     Navbar
 } from 'react-bootstrap'
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import {
     BrowserRouter as Router,
     Route,
@@ -18,27 +17,31 @@ import {
 } from "react-router-dom";
 import Profile from "./Profile";
 
-const Marker = (props) => {
-    const {title,  price, desc, address} = props;
-    const popover = (
-        <Popover id="popover-basic">
-            <Popover.Title as="h3" style={{color:"black"}}><strong>{title}</strong></Popover.Title>
-            <Popover.Content>
-                <p>{desc}</p>
-                <p> Rénumération: {price}</p>
-                <p>{address}</p>
-            </Popover.Content>
-            <MDBBtn style={{marginLeft:"15%", Width:"3%"}}>Postuler</MDBBtn>
-        </Popover>
-    );
+function Marker(props) {
+    const {title,  price, desc, address, color} = props;
     return (
-        <div style={{height: "50px", width: "50px"}}>
-            <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+        <div style={{display :"flex"}} className="m-5 p-5">
+            <MDBPopover
+                placement="left"
+                popover
+                clickable
+
+            >
                 <div style={{ color: 'red' }}>
-                    <Icon size={23} icon={mapPin}/>
+                    <Icon size={35} icon={pin_2}/>
                 </div>
-            </OverlayTrigger>
+                <div>
+                    <MDBPopoverHeader><strong>{title}</strong></MDBPopoverHeader>
+                    <MDBPopoverBody>
+                        <p>{desc}</p>
+                        <p> Rénumération: {price}</p>
+                        <p>{address}</p>
+                        <MDBBtn style={{marginLeft:"15%", Width:"3%"}}>Postuler</MDBBtn>
+                    </MDBPopoverBody>
+                </div>
+            </MDBPopover>
         </div>
+
     )
 }
 
@@ -57,161 +60,88 @@ const Perso = (props: any) => {
 };
 const styleMap =  [
     {
+        "featureType": "administrative",
         "elementType": "geometry",
         "stylers": [
             {
-                "color": "#242f3e"
+                "visibility": "off"
             }
         ]
     },
     {
-        "elementType": "labels.text.fill",
+        "featureType": "administrative.neighborhood",
         "stylers": [
             {
-                "color": "#746855"
-            }
-        ]
-    },
-    {
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "color": "#242f3e"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.locality",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#d59563"
+                "visibility": "off"
             }
         ]
     },
     {
         "featureType": "poi",
-        "elementType": "labels.text.fill",
         "stylers": [
             {
-                "color": "#d59563"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.park",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#263c3f"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.park",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#6b9a76"
+                "visibility": "off"
             }
         ]
     },
     {
         "featureType": "road",
-        "elementType": "geometry",
+        "elementType": "labels",
         "stylers": [
             {
-                "color": "#38414e"
+                "visibility": "off"
             }
         ]
     },
     {
         "featureType": "road",
-        "elementType": "geometry.stroke",
+        "elementType": "labels.icon",
         "stylers": [
             {
-                "color": "#212a37"
+                "visibility": "off"
             }
         ]
     },
     {
-        "featureType": "road",
-        "elementType": "labels.text.fill",
+        "featureType": "road.arterial",
+        "elementType": "labels",
         "stylers": [
             {
-                "color": "#9ca5b3"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#746855"
+                "visibility": "off"
             }
         ]
     },
     {
         "featureType": "road.highway",
-        "elementType": "geometry.stroke",
+        "elementType": "labels",
         "stylers": [
             {
-                "color": "#1f2835"
+                "visibility": "off"
             }
         ]
     },
     {
-        "featureType": "road.highway",
-        "elementType": "labels.text.fill",
+        "featureType": "road.local",
         "stylers": [
             {
-                "color": "#f3d19c"
+                "visibility": "off"
             }
         ]
     },
     {
         "featureType": "transit",
-        "elementType": "geometry",
         "stylers": [
             {
-                "color": "#2f3948"
-            }
-        ]
-    },
-    {
-        "featureType": "transit.station",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#d59563"
+                "visibility": "off"
             }
         ]
     },
     {
         "featureType": "water",
-        "elementType": "geometry",
+        "elementType": "labels.text",
         "stylers": [
             {
-                "color": "#17263c"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#515c6d"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "color": "#17263c"
+                "visibility": "off"
             }
         ]
     }
@@ -230,20 +160,20 @@ var NavStyle2 = {
     color: "#46C2FF"
 }
 
-const Sidebar = () => {
-    return(
+function Sidebar() {
+    return (
                <Router>
                 <Navbar expand="lg" style={{backgroundColor : "#21212E"}} variant="dark">
                         <Navbar.Brand>
                             <strong style={NavStyle2}>JoBizz.</strong>
-                            <Link to={"UserPage"}><a style={NavStyle}>Map</a></Link>
-                            <Link to={"Profil"}><a style={NavStyle}>Profil</a></Link>
-                            <Link to={"Missions"}><a style={NavStyle}>Mes Missions</a></Link>
+                            <Link to={"/map"}><a style={NavStyle}>Map</a></Link>
+                            <Link to={"/Profil"}><a style={NavStyle}>Profil</a></Link>
+                            <Link to={"/Missions"}><a style={NavStyle}>Mes Missions</a></Link>
                             <Link to={"/Paramètre"}><a style={NavStyle}>Paramètre</a></Link>
                         </Navbar.Brand>
                 </Navbar>
                 <Switch>
-                    <Route path='/UserPage' component={UserPage}></Route>
+                    <Route path='/map' component={UserPage}></Route>
                     <Route path="/Profile" component={Profile}></Route>
                 </Switch>
             </Router>
@@ -299,13 +229,13 @@ class UserPage extends Component {
         return (
             <div className="main">
                 <div id="viewport">
-                    <div style={{ height: '100vh', width: '205%' }}>
+                    <div style={{ height: '100vh', width: '150%' }}>
                         <div className="map">
                             <GoogleMapReact
                                 options={{
                                     styles: styleMap,
                                 }}
-                                bootstrapURLKeys={{ key: 'AIzaSyDW41KMRzwFp4m7Uht_53PiPHv0LSqXq5Y' }}
+                                bootstrapURLKeys={{ key: 'AIzaSyDz6roLb2qq8-Dz1y6U4oVCQ-1DTD_sPA0' }}
                                 center={{lat: this.state.latMe, lng: this.state.lonMe}}
                                 defaultZoom={14}
 >

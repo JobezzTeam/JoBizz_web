@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './App.css';
-import LandingPage from './component/Home'
+import LandingPage from './component/Home/Home'
 import { Lines } from 'react-preloaders';
 
 

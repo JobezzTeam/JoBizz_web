@@ -3,12 +3,8 @@ const path = require('path');
 const app = express();
 var cors = require('cors');
 var mongoose = require('mongoose');
-const socketio = require('socket.io');
-const http = require("http");
 var port = process.env.PORT || 4000;
 
-const server = http.createServer(app);
-const socket = socketio(server);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
@@ -17,10 +13,9 @@ const uri = "mongodb+srv://epitech:dashboard@cluster0-pjznu.mongodb.net/jobizz?r
 mongoose.connect(uri, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex:true}); //connection a la db
 const connection = mongoose.connection;    //creation de l'objet connexion
 connection.once('open', () => {
-    console.log("Connexion a la db ok");
+    console.log("Connected to MongoDB");
     }
 );
-
 
 const usersRouter = require('./routes/users');//route pour le user/ le fichier qui nous permettra de stocker les element
 const anoRouter = require('./routes/annonces');

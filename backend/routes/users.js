@@ -15,65 +15,53 @@ var ip2location = require('ip-to-location');
 
 router.use(cors());
 
-router.post('/register',(req, res, err) => {
-    const prenom = req.body.prenom;         //recuperation  du name input
-    const nom = req.body.nom;               //Nom
-    let email = req.body.email;             //recuperation de l'email
-    let password = req.body.password;     //recuperation du password
+router.post("/Register", (req, res) => {
+    const prenom = req.body.FirstName;
+    const nom = req.body.LastName;
+    let email = req.body.Email;
+    let password = req.body.Password;
 
-    ///verification des champs //////
-    if (!prenom) {
-        return res.send({
-            success:false
+    Email = Email.toLowerCase();
+    if (!prenom || prenom.length < 2 || prenom.length > 25)
+        return res.status(401).send("Need FirstName");
+    if (!email)
+        return res.status(401).send("Need Email");
+    if (!nom || nom.length < 2 || nom.length > 25)
+        return res.status(401).send("Need LastName");
+    if (!Password || Password.length < 8 || password.length > 20)
+        return res.status(401).send("Need Password");
+    User.findOne({email : email})
+        .then(user => {
+            if (user)
+                return res.status(400).send("already exist");
+            else {
+                password = bcrypt.hashSync(password, 10);
+                const newUser = new User({nom, prenom, email, password})
+                newUser.save()
+                    .then(user => {
+                        console.log(user);
+                        res.status(200).send("User Registered")
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        res.status(502).send("Error on server")
+                    })
+                }
         })
-    }
-    if (!nom) {
-        return res.send({
-            success:false
+        .catch(err => {
+            console.log(err);
+            res.status(502).send("Error on server")
         })
-    }
-    if (!email) {
-        return res.send({
-            success:false
-        })
-    }
-    if (!password) {
-        return res.send({
-            success:false
-        })
-    }
-    email = email.toLowerCase();                            //mettre en lowercase l'email
-    User.findOne({email: email}, (err, user) => {           //utilisationj de la fonction FindOne pour trouver si l'email est deja existant
-        if (err) {                                          //catch une err
-            return res.send({
-                success:false,
-                status:400,
-                message:'Error from server'
-            });
-        }
-        if (user) {                                         //si findOne trouve un email, on renvoie utilisateur deja existant
-            return res.send({
-                success:false,
-                status:400,
-                message:'User already exist'
-            });
-        }
-        password = bcrypt.hashSync(password, 10);
-        const newUser = new User({nom, prenom, email, password});//on stock les info dans NewUser
-        console.log(password);
-        newUser.save((err) => {//la fonction save permet de sauvegarder les donnée dans la base de donné
-            res.send({
-                success:true,
-                status:200,
-                message:'User register done'
-            })
-        })
-    })
 });
 
 router.post('/login', (req, res) => {           //route vers le login
-    password = req.body.password;               //recuperation de l'input password
-    email = req.body.email;                     //recuperaton de l'input email
+    const password = req.body.password;               //recuperation de l'input password
+    let email = req.body.email;
+    
+    if (!email || !password)
+        return res.status(401).send("need email or password");
+    //recuperaton de l'input email
+    email = email.toLowerCase();
     User.findOne({email: email})                //findOne permet de trouver le PREMIER email dans la db
         .then(user => {                 //promesse si ca marche
             if (user) {                         //si il trouve
@@ -90,17 +78,12 @@ router.post('/login', (req, res) => {           //route vers le login
                         token: token
                     });
                 }
-                else                                    //sinon ta un mauvais mdp
-                    res.status(400).send({
-                        success:false,
-                        message:"Failed to connect"
-                    })
+                else {
+                    return res.status(401).send("err")
+                }
             }
-            else if (!user) {                           //sinon ton email n'existe pas
-                res.status(400).send({
-                    success: false,
-                    message: "User doesn't exist"
-                })
+            else {
+                return res.status(401).send("No user")
             }
         })
         .catch(err => {                     //condition d'erreur pour eviter de timeout pendant la requete
