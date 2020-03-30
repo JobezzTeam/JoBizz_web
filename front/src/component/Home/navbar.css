@@ -1,0 +1,29 @@
+.title {
+    font-family: 'Gotham Rounded', sans-serif;
+    font-size: 2.1em;
+    margin-left: 50%;
+}
+
+.stay {
+    z-index: 2;
+}
+
+.navbar-expand .navbar-collapse {
+    margin-left: 55%;
+}
+
+.item {
+    color: white;
+    font-family: 'Gotham Rounded', sans-serif;
+    font-size: 1.3em;
+}
+
+.nav-item {
+    display: inline;
+    padding-left: 20%;
+    /* padding-left: c20% !important; */
+}
+
+/* .navbar-nav > li {
+    transition-duration: 0s !important;
+} */

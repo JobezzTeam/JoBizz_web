@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff7b1e76-eb0f-46ec-b85d-6054989f61cd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/Home.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/Login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/Navbar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/Recruteur/RecruteurLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/component/Recruteur/RecruteurLogin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/Recruteur/RecruteurRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/component/Recruteur/RecruteurRegister.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/Register.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/UserPage/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/component/UserPage/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/UserPage/UserPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/component/UserPage/UserPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/component/UserPage/UserPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/component/UserPage/UserPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/component/navbar.css" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/backend/node_modules/" />
     <ignored path="$PROJECT_DIR$/front/node_modules/" />
@@ -36,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/front/src/component/UserPage/Profile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="8" selection-end-column="12" />
+            <state relative-caret-position="294">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -56,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/front/src/component/UserPage/UserPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+            <state relative-caret-position="479">
+              <caret line="237" column="58" selection-start-line="237" selection-start-column="58" selection-end-line="237" selection-end-column="58" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -225,12 +209,12 @@
       <workItem from="1578408070339" duration="2081000" />
       <workItem from="1582282991204" duration="233000" />
       <workItem from="1582652301880" duration="995000" />
-      <workItem from="1585565831826" duration="916000" />
+      <workItem from="1585565831826" duration="1397000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12417000" />
+    <option name="totallyTimeSpent" value="12898000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1680" y="-337" width="1920" height="1080" extended-state="0" />
@@ -248,7 +232,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.20207743" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.28328612" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -378,15 +362,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/front/src/component/UserPage/Profile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="8" selection-end-column="12" />
+        <state relative-caret-position="294">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front/src/component/UserPage/UserPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        <state relative-caret-position="479">
+          <caret line="237" column="58" selection-start-line="237" selection-start-column="58" selection-end-line="237" selection-end-column="58" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>

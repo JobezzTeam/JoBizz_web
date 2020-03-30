@@ -235,7 +235,7 @@ class UserPage extends Component {
                                 options={{
                                     styles: styleMap,
                                 }}
-                                bootstrapURLKeys={{ key: 'AIzaSyDz6roLb2qq8-Dz1y6U4oVCQ-1DTD_sPA0' }}
+                                bootstrapURLKeys={{ key: '' }}
                                 center={{lat: this.state.latMe, lng: this.state.lonMe}}
                                 defaultZoom={14}
 >
