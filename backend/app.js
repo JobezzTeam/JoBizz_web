@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-const uri = "mongodb+srv://epitech:dashboard@cluster0-pjznu.mongodb.net/jobizz?retryWrites=true&w=majority\n"; //url pour se connecter a la db
+const uri = ""; //url pour se connecter a la db
 mongoose.connect(uri, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex:true}); //connection a la db
 const connection = mongoose.connection;    //creation de l'objet connexion
 connection.once('open', () => {
